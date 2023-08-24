@@ -1,0 +1,14 @@
+{% extends 'api/base.html' %}
+
+{% block content %}
+    <div id="termynal" class="w-full" data-termynal>
+        {% if response %}
+            {% for message in response %}
+                <span data-ty="progress"></span>
+                <span data-ty="input">{{ message }}</span>
+            {% endfor %}
+        {% else %}
+            <span data-ty="input" class="text-red-700">Some error occured while applying :(</span>
+        {% endif %}
+    </div>
+{% endblock %}
