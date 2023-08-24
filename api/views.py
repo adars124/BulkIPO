@@ -6,10 +6,7 @@ import json
 from .utils import (
     login, 
     own_details, 
-    get_client_boid,
     get_applicable_share,
-    bank_details,
-    customer_code,
     apply_share
 )
 from .models import Info
