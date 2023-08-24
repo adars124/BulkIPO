@@ -49,21 +49,22 @@ def save(request):
 def batch_apply(request):
     users = Info.objects.all()
 
-    messages = []
     if request.method == 'POST':
         kittas = request.POST['kittas']
         selectedIpo = request.POST['selectedIpo']
 
-        messages.append(apply_share(users, kittas, selectedIpo)['message'])
+        messages = apply_share(users, kittas, selectedIpo)
 
     return render(request, 'api/batch_apply.html', { "users": users, "response": messages })
 
 def user_input(request):
     user = Info.objects.first()
 
-    token = login(user)
-    applicableIpos = get_applicable_share(token)['object']
-
+    if user:
+        token = login(user)
+        applicableIpos = get_applicable_share(token)['object']
+    else:
+        applicableIpos = None
     return render(request, 'api/user_input.html', { "applicableIpos": applicableIpos })
 
 def about(request):

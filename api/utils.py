@@ -155,31 +155,35 @@ def apply_ipo(data):
     return res.json()
     
 def apply_share(users, kitta, companyShareId):
-    for user in users:
-        token = login(user)
+    messages = []
+    if users:
+        for user in users:
+            token = login(user)
 
-        ownDetails = own_details(token)
-        getClientBoid = get_client_boid(token, ownDetails['demat'])
+            ownDetails = own_details(token)
+            getClientBoid = get_client_boid(token, ownDetails['demat'])
 
-        bankDetails = bank_details(token, getClientBoid['bankCode'])
+            bankDetails = bank_details(token, getClientBoid['bankCode'])
 
-        customerCode = customer_code(token, bankDetails['bank']['id'])['id']
+            customerCode = customer_code(token, bankDetails['bank']['id'])['id']
 
-        data = {
-            "accountBranchId": bankDetails['branch']['id'],
-            "accountNumber": bankDetails['accountNumber'],
-            "appliedKitta": str(kitta),
-            "bankId": bankDetails['bank']['id'],
-            "boid": ownDetails['boid'],
-            "companyShareId": companyShareId,
-            "crnNumber": user.crn,
-            "customerId": customerCode,
-            "demat": getClientBoid['boid'],
-            "transactionPIN": user.pin,
-            "token": token
-        }
+            data = {
+                "accountBranchId": bankDetails['branch']['id'],
+                "accountNumber": bankDetails['accountNumber'],
+                "appliedKitta": str(kitta),
+                "bankId": bankDetails['bank']['id'],
+                "boid": ownDetails['boid'],
+                "companyShareId": companyShareId,
+                "crnNumber": user.crn,
+                "customerId": customerCode,
+                "demat": getClientBoid['boid'],
+                "transactionPIN": user.pin,
+                "token": token
+            }
 
-        applyIPO = apply_ipo(data=data)
+            messages.append((apply_ipo(data=data)))
+    else:
+        messages.append('No users added!')
 
-    return applyIPO
+    return messages
 
