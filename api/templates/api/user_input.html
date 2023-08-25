@@ -5,10 +5,10 @@
         {% csrf_token %}
         <h1 class="text-2xl mb-5 font-semibold text-center text-white">Details</h1>
         <div class="mb-6">
-            <label for="selectedIpo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Which company would you like to apply for?</label>
+            <label for="selectedIpo" class="block mb-2 text-sm font-medium text-white">Which company would you like to apply for?</label>
             <select id="selectedIpo"
                 name="selectedIpo"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                class="border text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-800 text-gray-800 focus:ring-blue-500 focus:border-blue-500">
                 {% if applicableIpos %}
                     <option value="" selected disabled>Select Your DP</option>
                     {% for applicableIpo in applicableIpos %}
@@ -21,13 +21,13 @@
         </div>
 
         <div class="mb-6">
-            <label for="kittas" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">How much would you like to apply?</label>
+            <label for="kittas" class="block mb-2 text-sm font-medium text-white">How much would you like to apply?</label>
             <input type="number" id="kittas" name="kittas"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-800 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Enter no. of units" required>
         </div>
 
         <button type="submit"
-        class="text-white block mx-auto bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Apply</button>
+        class="text-white block mx-auto focus:outline-none font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-800">Apply</button>
     </form>
 {% endblock %}

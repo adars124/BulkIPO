@@ -7,11 +7,11 @@
 
     {% csrf_token %}
     <div class="mb-6">
-        <label for="clientId" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Depository
+        <label for="clientId" class="block mb-2 text-sm font-medium text-white">Depository
             Participant</label>
         <select id="clientId"
             name="clientId"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            class="border text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-800 text-gray-800 focus:ring-blue-500 focus:border-blue-500">
             <option value="" selected disabled>Select Your DP</option>
             {% for capital in capitals %}
                 <option value="{{ capital.id }}">{{ capital.name }}</option>
@@ -20,15 +20,15 @@
 
     </div>
     <div class="mb-6">
-        <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
+        <label for="username" class="block mb-2 text-sm font-medium text-white">Username</label>
         <input type="text" id="username" name="username"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="border text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-800 focus:ring-blue-500 focus:border-blue-500"
             placeholder="Enter your Username" required>
     </div>
     <div class="mb-6">
         <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
         <input type="password" id="password" name="password"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="border text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-800 focus:ring-blue-500 focus:border-blue-500"
             placeholder="Enter your password" required>
     </div>
 
@@ -36,13 +36,13 @@
         <div>
             <label for="crn" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">CRN</label>
             <input type="text" id="crn" name="crn"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="border text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-800 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Enter CRN number" required>
         </div>
         <div>
             <label for="pin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pin</label>
             <input type="password" id="pin" name="pin"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-800 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Enter your pin" required>
         </div>
     </div>
