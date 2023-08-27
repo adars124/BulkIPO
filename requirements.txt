@@ -1,6 +1,5 @@
 Django==4.2.4
 django-tailwind==3.6.0
 django-browser-reload==1.11.0
-Pillow==9.0.1
 requests==2.25.1
 
